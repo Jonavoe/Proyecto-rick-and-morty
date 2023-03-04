@@ -1,0 +1,41 @@
+.card {
+    background: rgba(239, 253, 228, 0.568);
+    border-radius: 5rem;
+    padding: 1rem;
+    color: rgba(35, 176, 203, 0.8);
+    margin: 1rem;
+    
+    -webkit-text-stroke: 1px #000;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+	gap: 1rem;
+}
+
+.cards img {
+	width: 100%;
+	border-radius: 5rem;
+}
+
+.character {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.btn {
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    background: rgba(200, 200, 200, 0.5);
+    color: #666;
+}
+.btn:hover {
+    background: rgba(35, 176, 203, 0.5);
+    color: #fff;
+}
