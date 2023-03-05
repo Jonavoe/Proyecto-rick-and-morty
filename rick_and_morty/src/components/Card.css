@@ -15,8 +15,8 @@
 }
 
 .cards img {
-	width: 100%;
-	border-radius: 5rem;
+	width: 50%;
+	border-radius: 100%;
 }
 
 .character {
@@ -25,6 +25,10 @@
     justify-content: center;
     flex-wrap: wrap;
 	gap: 2rem;
+}
+
+.btn-container {
+    display: flex;
 }
 
 .btn {

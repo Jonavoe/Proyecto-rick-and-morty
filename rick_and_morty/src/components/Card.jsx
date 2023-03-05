@@ -4,11 +4,17 @@ export default function Card(props) {
 
   return (
     <div className="card">
-      <button onClick={onClose} className='btn'>X</button>
+      <div>
+      <div className="btn-container">
+        <button onClick={onClose} className='btn'>X</button>
+      </div>
+      <img src={image} alt={name} />
+      </div>
+      <div className="text">
       <h2>{name}</h2>
       <h2>{species}</h2>
       <h2>{gender}</h2>
-      <img src={image} alt={name} />
+      </div>
       
       
     </div>
