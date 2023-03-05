@@ -1,4 +1,4 @@
-import "./Card.css";
+import "./SearchBar.css";
 import Card from './Card';
 
 export default function Cards(props) {

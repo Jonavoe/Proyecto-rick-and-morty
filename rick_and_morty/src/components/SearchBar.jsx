@@ -1,3 +1,4 @@
+import './SearchBar.css';
 import { useState } from "react";
 
 export default function SearchBar(props) {
@@ -12,9 +13,9 @@ export default function SearchBar(props) {
     onSearch(seachTerm);
   }
   return (
-    <div>
-      <input type="search" value={seachTerm} onChange={inputBusqueda} />
-      <button onClick={btnBusqueda}>Agregar</button>
+    <div className="search">
+      <input className="input-search" type="search" value={seachTerm} onChange={inputBusqueda} />
+      <button className="btn-search" onClick={btnBusqueda}>Agregar</button>
     </div>
   );
 }
