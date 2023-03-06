@@ -1,12 +1,17 @@
 import './Card.css';
+
 export default function Card(props) {
-  const { name, species, gender, image, onClose } = props;
+  const { id,name, species, gender, image, onClose } = props;
+
+  function handDelete() {
+    onClose(id);
+  }
 
   return (
     <div className='card'>
       <div>
         <div className='btn-container'>
-          <button onClick={onClose} className='btn'>
+          <button onClick={handDelete} className='btn'>
             X
           </button>
         </div>

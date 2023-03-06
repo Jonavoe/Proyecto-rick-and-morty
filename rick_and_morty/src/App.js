@@ -1,9 +1,15 @@
 import './App.css';
-import Cards from './components/Cards.jsx';
-import SearchBar from './components/SearchBar.jsx';
-import characters from './data.js';
+import Cards from './components/Cards/Cards.jsx';
+import Nav from './components/Nav/Nav.jsx';
+import React, { useState } from 'react';
 
 function App() {
+  const [characters, setCharacters] = useState([]);
+
+  function removeCharacters(id) {
+    setCharacters(oldChars => oldChars.filter(c => c.id !== id))
+  }
+
   return (
     <div className='App'>
       <div className='img'>
@@ -13,9 +19,9 @@ function App() {
           className='banner'
         />
       </div>
-      <SearchBar onSearch={characterID => window.alert(characterID)} />
+      <Nav setCharacters={setCharacters} />
       <div className='cards'>
-        <Cards characters={characters} />
+        <Cards characters={characters} onClose={removeCharacters} />
       </div>
     </div>
   );
