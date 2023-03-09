@@ -3,10 +3,10 @@
   margin: 1rem;
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
-.btn-search {
+.btnSearch {
   font-weight: bold;
   border: none;
   background-color: var(--bg-color);
@@ -15,12 +15,12 @@
   padding: 0.5rem;
   cursor: pointer;
 }
-.btn-search:hover {
+.btnSearch:hover {
   background-color: var(--bgh-color);
   color: var(--fonth-color);
 }
 
-.input-search {
+.inputSearch {
   font-weight: bold;
   border: none;
   background-color: var(--bg-color);
@@ -30,11 +30,16 @@
   width: 20rem;
   cursor: pointer;
 }
-.input-search:hover {
+.inputSearch:hover {
   background-color: var(--bgh-color);
   color: var(--fonth-color);
 }
-.input-search:focus {
+.inputSearch:focus {
   background-color: var(--bgh-color);
   color: var(--fonth-color);
+}
+
+.formSearch {
+  display: flex;
+  gap: 0.5rem;
 }

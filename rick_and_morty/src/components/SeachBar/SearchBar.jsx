@@ -1,4 +1,4 @@
-import './SearchBar.css';
+import styles from './SearchBar.module.css';
 import { useState } from 'react';
 
 export default function SearchBar(props) {
@@ -6,9 +6,8 @@ export default function SearchBar(props) {
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    props.onSearch(searchValue)
-    setSearchValue('')
-  
+    props.onSearch(searchValue);
+    setSearchValue('');
   }
 
   function handleInputChange(event) {
@@ -16,18 +15,18 @@ export default function SearchBar(props) {
   }
 
   return (
-    <div className='search'>
-      <form onSubmit={handleFormSubmit}>
+    <div className={styles.search}>
+      <form className={styles.formSearch} onSubmit={handleFormSubmit}>
         <input
-          className='input-search'
+          className={styles.inputSearch}
           type='search'
           value={searchValue}
           onChange={handleInputChange}
         />
-        <button className='btn-search' type='submit'>
+        <button className={styles.btnSearch} type='submit'>
           Agregar
         </button>
       </form>
     </div>
   );
-  }
+}

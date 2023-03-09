@@ -1,0 +1,62 @@
+@import '../variables.css';
+
+.card {
+  /* background-color: var(--bgof-color); */
+  background-image: url('https://i.pinimg.com/originals/a0/b4/43/a0b44378f7765d140a88b8cc08a5dfb5.png');
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-size: 0.6rem;
+  transition: transform .5s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.2);
+}
+
+.img {
+  margin-bottom: 0.5rem;
+}
+
+.card img {
+  width: 12rem;
+  margin: 0 1rem;
+  border-radius:30%;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.btn {
+  font-weight: bold;
+  border-radius: .5rem;
+  border: none;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  padding: .6rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--bgh-color);
+  color: var(--fonth-color);
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-radius: 1rem;
+}
+.text h2 {
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  border-radius: 1rem;
+  padding: 0.1rem;
+  margin: 0.1rem;
+}
+
+.text h2:hover {
+  background-color: var(--bgh-color);
+  color: var(--fonth-color);
+}

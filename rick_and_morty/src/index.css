@@ -5,11 +5,13 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: #aaa;
-	background-image: url('https://picfiles.alphacoders.com/157/157831.png');
-  background-position: center center;
-  background-attachment: fixed;
+  
+	/* background-image: url('https://picfiles.alphacoders.com/157/157831.png'); */
+	background-image: url('https://www.xtrafondos.com/wallpapers/rick-y-morty-en-el-espacio-6046.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
   
 }
 

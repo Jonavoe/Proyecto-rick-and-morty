@@ -1,25 +1,24 @@
-import './Card.css';
+import styles from './Card.module.css';
 
-export default function Card(props) {
-  const { id,name, species, gender, image, onClose } = props;
+export default function Card({id, name, species, gender, image, onClose }) { 
 
   function handDelete() {
     onClose(id);
   }
 
   return (
-    <div className='card'>
+    <div className={styles.card}>
       <div>
-        <div className='btn-container'>
-          <button onClick={handDelete} className='btn'>
+        <div className={styles.btnContainer}>
+          <button onClick={handDelete} className={styles.btn}>
             X
           </button>
         </div>
-        <div className='img'>
+        <div className={styles.img}>
           <img src={image} alt={name} />
         </div>
       </div>
-      <div className='text'>
+      <div className={styles.text}>
         <h2>Name: {name}</h2>
         <h2>Species: {species}</h2>
         <h2>Gender: {gender}</h2>
