@@ -1,0 +1,19 @@
+@import '../variables.css';
+
+.btnRandom{
+    color: var(--font-color);
+}
+
+.btn {
+    font-weight: bold;
+    border-radius: .5rem;
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    padding: .6rem;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: var(--bgh-color);
+    color: var(--fonth-color);
+  }

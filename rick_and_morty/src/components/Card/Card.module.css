@@ -25,7 +25,16 @@
 
 .btnContainer {
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.id{
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  padding: 0.5rem;
+  border-radius: 100%;
+  font-size: 1rem;
 }
 
 .btn {
@@ -60,3 +69,4 @@
   background-color: var(--bgh-color);
   color: var(--fonth-color);
 }
+

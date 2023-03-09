@@ -10,6 +10,7 @@ export default function Card({id, name, species, gender, image, onClose }) {
     <div className={styles.card}>
       <div>
         <div className={styles.btnContainer}>
+          <span className={styles.id}>{id}</span>
           <button onClick={handDelete} className={styles.btn}>
             X
           </button>
