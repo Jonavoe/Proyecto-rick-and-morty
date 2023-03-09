@@ -57,6 +57,7 @@ function App() {
 
   return (
     <div className={styles.App}>
+    
       <Banner />
       <Random onClick={randomSearch} />
       <Nav value={onSearch} />
