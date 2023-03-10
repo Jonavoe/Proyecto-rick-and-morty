@@ -24,7 +24,7 @@ export default function SearchBar(props) {
           onChange={handleInputChange}
         />
         <button className={styles.btnSearch} type='submit'>
-          AGREGAR
+          Add
         </button>
       </form>
     </div>
