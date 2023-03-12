@@ -11,10 +11,12 @@
   justify-content: center;
   align-items: center;
   background-image: url('https://i.pinimg.com/originals/a0/b4/43/a0b44378f7765d140a88b8cc08a5dfb5.png');
+  background-size: cover;
   border-radius: 1rem;
   gap: 2rem;
   padding: 2rem;
   border-radius: 2rem;
+  box-shadow: 0rem 0rem 3rem #7863ff;
 }
 @media screen and (max-width: 968px) {
   .containerDetail {
@@ -26,9 +28,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: .3rem;
+  gap: .5rem;
   padding: 1rem;
-  background-color: var(--bgof-color);
 }
 
 .text {
@@ -38,6 +39,7 @@
   border-radius: 1rem;
   padding: 0.2rem;
   margin: 0;
+  box-shadow: 0rem 0rem 1rem #7863ff;
 }
 
 .text:hover {

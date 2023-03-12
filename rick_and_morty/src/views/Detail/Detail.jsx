@@ -92,13 +92,12 @@ export default function Detail(props) {
             )}
             {character.origin?.name ? (
               <h2 className={styles.text}>
-                Origin:{' '}
                 <a
                   href={character.origin?.url}
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  {character.origin?.name}
+                  Origin: {character.origin?.name}
                 </a>
               </h2>
             ) : (

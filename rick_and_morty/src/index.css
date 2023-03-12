@@ -13,10 +13,13 @@ body {
   background-attachment: fixed;
   background-position: center center;
   
+	font-family: 'Orbitron', 'Bangers', cursive, sans-serif;
+  
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-		monospace;
+	font-family: 'Orbitron', 'Bangers', cursive, sans-serif;
+	/* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace; */
 }
 

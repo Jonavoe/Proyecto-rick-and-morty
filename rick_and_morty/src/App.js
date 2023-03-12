@@ -1,34 +1,37 @@
 import styles from './App.module.css';
 import Nav from './components/Nav/Nav.jsx';
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './views/Home/Home';
 import About from './views/About/About';
 import Detail from './views/Detail/Detail';
 import Characters from './views/Landing/Characters';
 function App() {
   const [characters, setCharacters] = useState([]);
-
+  function removeCharacters(id) {
+    setCharacters(characters => characters.filter(c => c.id !== id));
+  }
   const onSearch = id => {
     // const URL_BASE = 'https://be-a-rym.up.railway.app/api';
     // const KEY = '1ffccaa0d688.4235080dc23aac8bb293';
     // fetch(`${URL_BASE}/character/${id}?key=${KEY}`)
-    fetch(`https://rickandmortyapi.com/api/character/${id}`)
-      .then(response => response.json())
-      .then(data => {
-        if (data.id) {
-          const duplicado = characters.some(
-            character => character.id === data.id
-          );
-          if (duplicado) {
-            window.alert('Personaje repetido');
+    if (id)
+      fetch(`https://rickandmortyapi.com/api/character/${id}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.id) {
+            const duplicado = characters.some(
+              character => character.id === data.id
+            );
+            if (duplicado) {
+              window.alert('Personaje repetido');
+            } else {
+              setCharacters(oldChars => [...oldChars, data]);
+            }
           } else {
-            setCharacters(oldChars => [...oldChars, data]);
+            window.alert('No hay personajes con ese ID');
           }
-        } else {
-          window.alert('No hay personajes con ese ID');
-        }
-      });
+        });
   };
 
   const randomSearch = id => {
@@ -52,13 +55,14 @@ function App() {
       });
   };
 
-  function removeCharacters(id) {
-    setCharacters(characters => characters.filter(c => c.id !== id));
-  }
+
+  const location = useLocation();
 
   return (
     <div className={styles.App}>
-      <Nav value={onSearch} randomSearch={randomSearch} />
+      {location.pathname !== '/' && (
+        <Nav value={onSearch} randomSearch={randomSearch} />
+      )}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route

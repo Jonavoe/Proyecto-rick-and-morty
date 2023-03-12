@@ -8,7 +8,7 @@ export default function Card(props) {
 
   return (
     <div className={styles.card}>
-      <Link to={`/detail/${props.id}`}>
+      
         <div>
           <div className={styles.btnContainer}>
             <span className={styles.id}>{props.id}</span>
@@ -16,10 +16,14 @@ export default function Card(props) {
               X
             </button>
           </div>
+          
+        <Link className={styles.link} to={`/detail/${props.id}`}>
           <div className={styles.img}>
             <img src={props.image} alt={props.name} />
           </div>
+          </Link>
         </div>
+        <Link className={styles.link} to={`/detail/${props.id}`}>
         <div className={styles.text}>
           <h2>Name: {props.name}</h2>
           <h2>Species: {props.species}</h2>

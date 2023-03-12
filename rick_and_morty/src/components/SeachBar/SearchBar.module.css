@@ -13,7 +13,7 @@
   color: var(--font-color);
   border-radius: 0.5rem;
   padding: 0.5rem;
-  cursor: pointer;
+  cursor: pointer;font-family: 'Orbitron', 'Bangers', cursive, sans-serif;
 }
 .btnSearch:hover {
   background-color: var(--bgh-color);

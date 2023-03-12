@@ -12,6 +12,7 @@
     color: var(--font-color);
     padding: .6rem;
     cursor: pointer;
+    font-family: 'Orbitron', 'Bangers', cursive, sans-serif;
   }
   .btn:hover {
     background-color: var(--bgh-color);
