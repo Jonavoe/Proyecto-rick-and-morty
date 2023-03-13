@@ -2,8 +2,9 @@ import styles from './App.module.css';
 import Nav from './components/Nav/Nav.jsx';
 import React, { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Home from './views/Home/Home';
 import About from './views/About/About';
+import Home from './views/Home/Home';
+import Login from './views/Login/Login';
 import Detail from './views/Detail/Detail';
 import Characters from './views/Landing/Characters';
 function App() {
@@ -55,16 +56,16 @@ function App() {
       });
   };
 
-
   const location = useLocation();
 
   return (
     <div className={styles.App}>
-      {location.pathname !== '/' && (
+      {location.pathname !== '/' && location.pathname !== '/home' && (
         <Nav value={onSearch} randomSearch={randomSearch} />
       )}
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/Home' element={<Home />} />
         <Route
           path='/characters'
           element={

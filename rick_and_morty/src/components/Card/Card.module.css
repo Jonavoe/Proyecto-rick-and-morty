@@ -11,11 +11,11 @@
   padding: 0.5rem;
   font-size: 0.6rem;
   transition: transform .5s ease-in-out;
-  box-shadow: 0rem 0rem 1rem #7863ff;
 }
 
 .card:hover {
-    transform: scale(1.2);
+    transform: scale(1.01);
+    box-shadow: 0rem 0rem 1rem #7863ff;
 }
 
 .img {

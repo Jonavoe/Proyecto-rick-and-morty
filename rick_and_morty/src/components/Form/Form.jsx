@@ -35,7 +35,7 @@ const Form = props => {
 
 
   const navigate = useNavigate();
-  const [access, setAccess] = useState(true);
+  const [access, setAccess] = useState(false);
   let usernamee = 'voeffray.jonathan@gmail.com';
   let passwordd = 'hola123';
 
@@ -46,8 +46,8 @@ const Form = props => {
       navigate('/home');
     }
   };
-  
-  useEffect(() => {
+
+  useEffect((userData) => {
     !access && navigate('/');
   }, [access, navigate]);
   
@@ -61,7 +61,9 @@ const Form = props => {
 
   return (
     <div className={styles.containerForm}>
-      <form onClick={handleSubmit} className={styles.form}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+      <div className={styles.inputSpan}>
+
         <label htmlFor='username' className={styles.label}>
           Username
         </label>
@@ -90,6 +92,7 @@ const Form = props => {
         >
           Username correcto
         </span>
+      </div>
 
         <label htmlFor='password' className={styles.label}>
           password

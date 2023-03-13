@@ -4,28 +4,6 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function Detail(props) {
-  // [
-  //   {
-  //     id: 506,
-  //     name: '',
-  //     status: '',
-  //     species: '',
-  //     type: '',
-  //     gender: '',
-  //     origin: {
-  //       name: '',
-  //       url: '',
-  //     },
-  //     location: {
-  //       name: '',
-  //       url: '',
-  //     },
-  //     image: '',
-  //     episode: [''],
-  //     url: '',
-  //     created: '',
-  //   },
-  // ]
   const [character, setCharacter] = useState({});
   const params = useParams();
 
