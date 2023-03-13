@@ -1,12 +1,15 @@
 import React from 'react';
-import Banner from '../../components/Banner/Banner';
-import {Link} from 'react-router-dom'
+import styles from './Home.module.css';
+import { Link } from 'react-router-dom';
 
 const Home = props => {
   return (
-    <div>
+    <div className={styles.container}>
       <Link to='/characters'>
-      <img src='https://coolthemestores.com/wp-content/uploads/2021/05/rick-and-morty-chrome-theme-wallpaper.jpg' />
+        <img
+          src='https://coolthemestores.com/wp-content/uploads/2021/05/rick-and-morty-chrome-theme-wallpaper.jpg'
+          alt='home'
+        />
       </Link>
     </div>
   );

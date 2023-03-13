@@ -16,7 +16,12 @@
   gap: 2rem;
   padding: 2rem;
   border-radius: 2rem;
-  box-shadow: 0rem 0rem 3rem #7863ff;
+}
+
+.containerDetail:hover {
+  box-shadow: 0rem 0rem 1rem #7863ff;
+  transform: scale(1.01);
+
 }
 @media screen and (max-width: 968px) {
   .containerDetail {

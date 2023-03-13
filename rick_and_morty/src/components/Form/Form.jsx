@@ -1,27 +1,12 @@
 import React, { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Form.module.css';
+import validate from './validation.js';
 
-const validate = (form, setErrorsUser, errorsUser) => {
-  if (!form.username)
-    setErrorsUser({ ...errorsUser, username: 'Username vacio' });
-  else {
-    if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{3})+$/.test(form.username))
-      setErrorsUser({ ...errorsUser, username: '' });
-    else setErrorsUser({ ...errorsUser, username: 'Username Invalido' });
-  }
-};
-
-const validatePass = (form, setErrorsPass, errorsPass) => {
-  if (/^(?=.*\d)[a-zA-Z\d]{6,10}$/.test(form.password))
-    setErrorsPass({ ...errorsPass, password: '' });
-  else setErrorsPass({ ...errorsPass, password: 'Password Invalido' });
-};
 const Form = props => {
   const [userData, setUserData] = useState({ username: '', password: '' });
 
-  const [errorsUser, setErrorsUser] = useState({ username: '' });
-  const [errorsPass, setErrorsPass] = useState({ password: '' });
+  const [errors, setErrors] = useState({ username: '',password: ''  });
 
   const handleChange = event => {
     const property = event.target.name;
@@ -29,27 +14,27 @@ const Form = props => {
 
     setUserData({ ...userData, [property]: value });
 
-    validate({ ...userData, [property]: value }, setErrorsUser, errorsUser);
-    validatePass({ ...userData, [property]: value }, setErrorsPass, errorsPass);
+    validate({ ...userData, [property]: value }, setErrors, errors);
   };
 
 
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-  let usernamee = 'voeffray.jonathan@gmail.com';
-  let passwordd = 'hola123';
+  let username = 'voeffray.jonathan@gmail.com';
+  let password = 'hola123';
 
   
   const login = (userData) => {
-    if (userData.username === usernamee && userData.password === passwordd) {
+    if (userData.username === username && userData.password === password) {
       setAccess(true);
       navigate('/home');
     }
   };
 
-  useEffect((userData) => {
+  useEffect(() => {
     !access && navigate('/');
-  }, [access, navigate]);
+  }, [access, navigate, userData]);
+  
   
   
 
@@ -76,16 +61,16 @@ const Form = props => {
         />
         <span
           className={
-            errorsUser.username && userData.username
+            errors.username && userData.username
               ? styles.userInvalid
               : styles.userNone
           }
         >
-          Username incorrecto
+          {errors.username}
         </span>
         <span
           className={
-            !errorsUser.username && userData.username
+            !errors.username && userData.username
               ? styles.userSuccess
               : styles.userNone
           }
@@ -106,16 +91,16 @@ const Form = props => {
         />
         <span
           className={
-            errorsPass.password && userData.password
+            errors.password && userData.password
               ? styles.userInvalid
               : styles.userNone
           }
         >
-          Password incorrecto
+          {errors.password}
         </span>
         <span
           className={
-            !errorsPass.password && userData.password
+            !errors.password && userData.password
               ? styles.userSuccess
               : styles.userNone
           }

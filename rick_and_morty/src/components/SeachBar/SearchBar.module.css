@@ -18,6 +18,7 @@
 .btnSearch:hover {
   background-color: var(--bgh-color);
   color: var(--fonth-color);
+  box-shadow: 0rem 0rem 1rem #7863ff;
 }
 
 .inputSearch {
@@ -33,6 +34,7 @@
 .inputSearch:hover {
   background-color: var(--bgh-color);
   color: var(--fonth-color);
+  box-shadow: 0rem 0rem 1rem #7863ff;
 }
 .inputSearch:focus {
   background-color: var(--bgh-color);

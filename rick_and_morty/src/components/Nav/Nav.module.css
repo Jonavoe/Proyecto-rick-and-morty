@@ -41,6 +41,7 @@
 .link:hover {
   background-color: var(--bgh-color);
   color: var(--fonth-color);
+  box-shadow: 0rem 0rem 1rem #7863ff;
 }
 
 .imgIcon {
@@ -61,4 +62,14 @@
 .btn:hover {
   background-color: var(--bgh-color);
   color: var(--fonth-color);
+  box-shadow: 0rem 0rem 1rem #7863ff;
+}
+.icono {
+  margin: 1rem;
+  width: 4rem;
+  border-radius: 100%;
+}
+.icono:hover {
+  transform: scale(1.1);
+  box-shadow: 0rem 0rem 1rem #7863ff;
 }
