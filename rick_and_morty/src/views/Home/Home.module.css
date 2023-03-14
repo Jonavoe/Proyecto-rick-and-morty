@@ -1,21 +1,20 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  .container img {
-    animation: moveUp 2s ease-in-out;
-    border-radius: 2rem;
+.container img {
+  animation: moveUp 2s ease-in-out;
+  border-radius: 2rem;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(100%);
   }
-  
-  @keyframes moveUp {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(0) rotate(360deg) ;
-    }
+  100% {
+    transform: translateY(0) rotate(360deg);
   }
-  
+}

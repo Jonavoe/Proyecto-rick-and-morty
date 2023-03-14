@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 import img from '../../img/icono.png'
 
 export default function Nav(props) {
-  const logOut = () => {
-    props.setAccess(false);
-  };
   return (
     <div className={styles.nav}>
       <Link to='/home'>
@@ -26,7 +23,7 @@ export default function Nav(props) {
           <li>About</li>
         </Link>
         <li>
-          <button onClick={logOut} className={styles.btn}>
+          <button className={styles.btn} onClick={props.logOut}>
             Log out
           </button>
         </li>

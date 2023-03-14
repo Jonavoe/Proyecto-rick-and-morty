@@ -1,11 +1,9 @@
-import React, { useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState} from 'react';
 import styles from './Form.module.css';
 import validate from './validation.js';
 
-const Form = props => {
+const Form = ({login}) => {
   const [userData, setUserData] = useState({ username: '', password: '' });
-
   const [errors, setErrors] = useState({ username: '',password: ''  });
 
   const handleChange = event => {
@@ -17,32 +15,10 @@ const Form = props => {
     validate({ ...userData, [property]: value }, setErrors, errors);
   };
 
-
-  const navigate = useNavigate();
-  const [access, setAccess] = useState(false);
-  let username = 'voeffray.jonathan@gmail.com';
-  let password = 'hola123';
-
-  
-  const login = (userData) => {
-    if (userData.username === username && userData.password === password) {
-      setAccess(true);
-      navigate('/home');
-    }
-  };
-
-  useEffect(() => {
-    !access && navigate('/');
-  }, [access, navigate, userData]);
-  
-  
-  
-
   const handleSubmit = (event) => {
     event.preventDefault();
     login(userData);
   };
-  
 
   return (
     <div className={styles.containerForm}>
