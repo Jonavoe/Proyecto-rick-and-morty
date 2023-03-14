@@ -1,5 +1,6 @@
 import styles from './App.module.css';
 import Nav from './components/Nav/Nav.jsx';
+import Favorites from './components/Favorites/Favorites.jsx';
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import About from './views/About/About';
@@ -91,6 +92,7 @@ function App() {
       )}
       <Routes>
         <Route path='/' element={<Login login={login} />} />
+        <Route path='/Favorites' element={<Favorites />} />
         <Route path='/Home' element={<Home />} />
         <Route
           path='/characters'

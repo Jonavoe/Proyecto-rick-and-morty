@@ -2,9 +2,10 @@ import Card from '../Card/Card';
 import styles from './Cards.module.css';
 
 export default function Cards({ characters, onClose }) {
+  const reverseCharacters = [...characters].reverse();
   return (
     <div className={styles.cards}>
-      {characters.map(character => (
+      {reverseCharacters.map(character => (
         <Card
           key={character.id}
           id={character.id}
