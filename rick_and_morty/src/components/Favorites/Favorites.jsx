@@ -1,9 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './Favorites.module.css';
+import { addCharacters, removeCharacters } from '../../redux/reducer';
 
 export default function Favorites(props) {
+  const dispatch = useDispatch();
   const myFavorites = useSelector(state => state.myFavorites);
+  function delFav(charId) {
+    dispatch(removeCharacters(charId));
+  }
 
   return (
     <div>
@@ -21,6 +26,11 @@ export default function Favorites(props) {
                 <h2>{`Name: ${char.name}`}</h2>
                 <h2>{`Species: ${char.species}`}</h2>
                 <h2>{`Gender: ${char.gender}`}</h2>
+              </div>
+                <button className={styles.btn} onClick={() => delFav(char.id)}>
+                  Remove Favorites
+                </button>
+              <div className={styles.btnContainer}>
               </div>
             </div>
           </div>

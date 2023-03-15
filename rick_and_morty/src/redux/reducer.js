@@ -5,6 +5,7 @@ const initialState = {
 export const ADD_CHARACTERS = 'ADD_CHARACTERS';
 export const REMOVE_CHARACTERS = 'REMOVE_CHARACTERS';
 
+
 export const addCharacters = (data) => {
   return {
     type: ADD_CHARACTERS,
