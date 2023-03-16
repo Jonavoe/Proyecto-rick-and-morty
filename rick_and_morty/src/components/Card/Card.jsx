@@ -1,6 +1,6 @@
 import styles from './Card.module.css';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,  useLocation} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCharacters, removeCharacters } from '../../redux/reducer';
 
@@ -29,6 +29,8 @@ export default function Card(props) {
     setIsFav(favExists);
   }, [myFavorites, props.id]);
 
+  const location = useLocation();
+
   return (
     <div className={styles.card}>
       <div>
@@ -36,16 +38,18 @@ export default function Card(props) {
           <span className={styles.id}>{props.id}</span>
           {isFav ? (
             <button onClick={delFav} className={styles.btnImg}>
-              <img src={heartWhite} alt='Favoritos' />
+              <img src={heart} alt='Favoritos' />
             </button>
           ) : (
             <button onClick={addFav} className={styles.btnImg}>
-              <img src={heart} alt='Favoritos' />
+              <img src={heartWhite} alt='Favoritos' />
             </button>
           )}
-          <button onClick={handDelete} className={styles.btn}>
-            X
-          </button>
+          {location.pathname === '/characters' && (
+            <button onClick={handDelete} className={styles.btn}>
+              X
+            </button>
+          )}
         </div>
         <Link className={styles.link} to={`/detail/${props.id}`}>
           <div className={styles.img}>
