@@ -2,10 +2,11 @@ import styles from './Card.module.css';
 import React, { useEffect, useState } from 'react';
 import { Link,  useLocation} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addCharacters, removeCharacters } from '../../redux/reducer';
+
 
 import heart from '../../img/heart.png';
 import heartWhite from '../../img/heart white.png';
+import { addCharacters, removeCharacters } from '../../redux/actions';
 
 export default function Card(props) {
   const dispatch = useDispatch();

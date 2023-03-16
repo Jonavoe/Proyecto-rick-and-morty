@@ -88,7 +88,7 @@ function App() {
   return (
     <div className={styles.App}>
       {location.pathname !== '/' && location.pathname !== '/home' && (
-        <Nav value={onSearch} randomSearch={randomSearch}  logOut={logOut} />
+        <Nav value={onSearch} randomSearch={randomSearch} logOut={logOut} />
       )}
       <Routes>
         <Route path='/' element={<Login login={login} />} />
