@@ -30,19 +30,19 @@ export default function Favorites() {
   return (
     <div>
       <div className={styles.title}>
-        <h2>My Favorites</h2>
+        <h2 className={styles.titleh2}>My Favorites</h2>
       </div>
-      <div>
-        <select onChange={orderByCharacters} name='Order'>
-          <option value='Ascendente'>Ascendente</option>
-          <option value='Descendente'>Descendente</option>
+      <div className={styles.selectContainer}>
+        <select className={styles.select} onChange={orderByCharacters} name='Order'>
+          <option className={styles.option} value='Ascendente'>Ascendente</option>
+          <option className={styles.option} value='Descendente'>Descendente</option>
         </select>
-        <select onChange={filterCharacters} name='Filter'>
-          <option value='All'>All</option>
-          <option value='Male'>Male</option>
-          <option value='Female'>Female</option>
-          <option value='Genderless'>Genderless</option>
-          <option value='unknown'>unknown</option>
+        <select className={styles.select} onChange={filterCharacters} name='Filter'>
+          <option className={styles.option} value='All'>All</option>
+          <option className={styles.option} value='Male'>Male</option>
+          <option className={styles.option} value='Female'>Female</option>
+          <option className={styles.option} value='Genderless'>Genderless</option>
+          <option className={styles.option} value='unknown'>unknown</option>
         </select>
       </div>
       <div className={styles.cards}>{char}</div>
