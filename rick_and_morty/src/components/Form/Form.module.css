@@ -1,0 +1,109 @@
+@import '../variables.css';
+
+.containerForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 1rem;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  box-shadow: 0rem 0rem 2rem #7863ff;
+}
+
+.label {
+  color: var(--font-color);
+  background-color: var(--bg-color);
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  box-shadow: 0rem 0rem 1rem #7863ff;
+}
+.label:hover {
+  background-color: var(--bgh-color);
+  color: var(--fonth-color);
+}
+
+.input {
+  font-weight: bold;
+  border: none;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 20rem;
+  cursor: pointer;
+  box-shadow: 0rem 0rem 1rem #7863ff;
+  outline: none;
+}
+
+.input:hover {
+  background-color: var(--bgh-color);
+  color: var(--fonth-color);
+}
+.input:focus {
+  background-color: var(--bgh-color);
+  color: var(--fonth-color);
+}
+.btn {
+  font-weight: bold;
+  border: none;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0rem 0rem 1rem #7863ff;
+  font-family: 'Orbitron', 'Bangers', cursive, sans-serif;
+}
+.btn:hover {
+  background-color: var(--bgh-color);
+  color: var(--fonth-color);
+}
+
+.userInvalid {
+  background-color:rgba(206, 30, 30,.7);
+  padding: .2rem;
+  border-radius: .5rem;
+  box-shadow: 0rem 0rem 1rem #7863ff;
+}
+.userSuccess {
+  background-color:rgba(30, 206, 30,.7);
+  padding: .2rem;
+  border-radius: .5rem;
+  box-shadow: 0rem 0rem 1rem #7863ff;
+}
+
+.userNone {
+  display: none;
+}
+.passwordInvalid {
+  background-color:rgba(206, 30, 30,.7);
+  padding: .2rem;
+  border-radius: .5rem;
+  box-shadow: 0rem 0rem 1rem #7863ff;
+}
+.passwordSuccess {
+  background-color:rgba(30, 206, 30,.7);
+  padding: .2rem;
+  border-radius: .5rem;
+  box-shadow: 0rem 0rem 1rem #7863ff;
+}
+
+.passwordNone {
+  display: none;
+}
+
+.inputSpan {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}

@@ -1,0 +1,98 @@
+@import '../variables.css';
+
+.link {
+  text-decoration: none;
+}
+
+.card {
+  background-image: url('https://i.pinimg.com/originals/a0/b4/43/a0b44378f7765d140a88b8cc08a5dfb5.png');
+  /* background-color: rgba(255, 255, 255, 0.15); */
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-size: 0.6rem;
+  transition: transform 0.5s ease-in-out;
+  box-shadow: 0rem 0rem 1rem #7863ff;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0rem 0rem 2rem #7863ff;
+}
+
+.img {
+  margin-bottom: 0.5rem;
+}
+
+.card img {
+  width: 12rem;
+  margin: 0 1rem;
+  border-radius: 30%;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.id {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  padding: 0.5rem;
+  border-radius: 100%;
+  font-size: 1rem;
+}
+
+.id:hover {
+  transform: scale(1.01);
+  box-shadow: 0rem 0rem 1rem #7863ff;
+}
+
+.btn {
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  padding: 0.6rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--bgh-color);
+  color: var(--fonth-color);
+  transform: scale(1.01);
+  box-shadow: 0rem 0rem 1rem #7863ff;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-radius: 1rem;
+}
+.text h2 {
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  border-radius: 1rem;
+  padding: 0.1rem;
+  margin: 0.1rem;
+}
+
+.text h2:hover {
+  background-color: var(--bgh-color);
+  color: var(--fonth-color);
+  transform: scale(1.01);
+  box-shadow: 0rem 0rem 1rem #7863ff;
+}
+
+.btnImg {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.btnImg:hover {
+  transform: scale(1.1);
+}
+.btnImg img {
+  width: 2rem;
+}
