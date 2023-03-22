@@ -5,7 +5,8 @@ export default function Random(props) {
   const [randomNumber, setRandomNumber] = useState(0);
 
   function newNumber() {
-    const newRandomNumber = Math.floor(Math.random() * 826) + 1;
+    // const newRandomNumber = Math.floor(Math.random() * 826) + 1;
+    const newRandomNumber = Math.floor(Math.random() * 4) + 1;
     setRandomNumber(newRandomNumber);
     props.onClick(newRandomNumber);
   }
