@@ -21,7 +21,7 @@ function App() {
     // const KEY = '1ffccaa0d688.4235080dc23aac8bb293';
     // fetch(`${URL_BASE}/character/${id}?key=${KEY}`)
     if (id)
-      fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
         .then(response => response.json())
         .then(data => {
           if (data.id) {

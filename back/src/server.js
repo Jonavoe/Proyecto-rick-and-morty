@@ -1,4 +1,5 @@
 const http = require('http');
+const characters = require('./utils/data');
 
 http
 	.createServer((req, res) => {
@@ -7,17 +8,15 @@ http
 		const { url } = req;
 		console.log(url);
 
-		if (url.includes('/')) {
-			res.writeHead(200, { 'Content-Type': 'text/plain' });
-			return res.end('Server Corriendo');
+		const characterId = url.split('/')[3];
+		const character = characters.find((char) => char.id == characterId);
+
+		if (url.includes('rickandmorty/character')) {
+			res.writeHead(200, { 'Content-Type': 'application/json' });
+			return res.end(JSON.stringify(character));
 		}
 
-		if (url.includes('/character')) {
-			res.writeHead(200, { 'Content-Type': 'text/plain' });
-			return res.end('Hola');
-		}
-
-		res.writeHead();
-		return res.end();
+		res.writeHead(404, { 'Content-Type': 'text/plain' });
+		return res.end('Not found');
 	})
 	.listen(3001, 'localhost');
