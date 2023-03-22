@@ -17,7 +17,7 @@ export default function Detail(props) {
           window.alert('No hay personajes con ese ID');
         }
       });
-  }, []);
+  }, [params.id]);
 
   return (
     <div className={styles.detail}>
