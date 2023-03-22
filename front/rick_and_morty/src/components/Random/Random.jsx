@@ -14,7 +14,7 @@ export default function Random(props) {
   return (
     <div className={styles.btnRandom}>
       <button onClick={newNumber} className={styles.btn}>
-      🃏Get a Card {randomNumber}🃏
+      🃏Get a random Card {randomNumber}🃏
       </button>
     </div>
   );
