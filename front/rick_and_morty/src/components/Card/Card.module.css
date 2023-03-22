@@ -5,14 +5,19 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-image: url('https://i.pinimg.com/originals/a0/b4/43/a0b44378f7765d140a88b8cc08a5dfb5.png');
   /* background-color: rgba(255, 255, 255, 0.15); */
   border-radius: 1rem;
-  padding: 0.5rem;
-  font-size: 0.6rem;
   transition: transform 0.5s ease-in-out;
   box-shadow: 0rem 0rem 1rem #7863ff;
+  margin: 0;
+  padding: 0.5rem;
 }
+
 
 .card:hover {
   transform: scale(1.02);
@@ -78,12 +83,14 @@
   margin: 0.1rem;
 }
 
+
 .text h2:hover {
   background-color: var(--bgh-color);
   color: var(--fonth-color);
   transform: scale(1.01);
   box-shadow: 0rem 0rem 1rem #7863ff;
 }
+
 
 .btnImg {
   background-color: transparent;

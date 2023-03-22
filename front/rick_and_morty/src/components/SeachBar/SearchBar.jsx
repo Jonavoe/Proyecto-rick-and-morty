@@ -19,7 +19,7 @@ export default function SearchBar(props) {
       <form className={styles.formSearch} onSubmit={handleFormSubmit}>
         <input
           className={styles.inputSearch}
-          type='search'
+          type='number'
           value={searchValue}
           onChange={handleInputChange}
         />
