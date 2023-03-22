@@ -19,8 +19,11 @@
 
 .linkUl {
   display: flex;
-  gap: 1rem;
-  margin-right: 2rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  margin: 1rem 0 0 0;
+  padding: 0;
 }
 .linkUl li {
   list-style: none;
@@ -36,7 +39,7 @@
   cursor: pointer;
   font-family: 'Orbitron', 'Bangers', cursive, sans-serif;
   text-decoration: none;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 .link:hover {
   background-color: var(--bgh-color);
@@ -73,6 +76,29 @@
   transform: scale(1.1);
   box-shadow: 0rem 0rem 1rem #7863ff;
 }
+
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.containerList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
 /* 
 .menuOpen {
   display: flex;
