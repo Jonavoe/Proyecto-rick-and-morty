@@ -5,7 +5,7 @@ const getCharById = (res, ID) => {
 		.get(`https://rickandmortyapi.com/api/character/${ID}`)
 		.then((response) => {
 			const { id, image, name, gender, species } = response.data;
-			const character = { id, image, name, gender, species };
+			const character = { id:id, image:image, name:name, gender:gender, species:species };
 			res.writeHead(200, { 'Content-Type': 'application/json' });
 			res.end(JSON.stringify(character));
 		})

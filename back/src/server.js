@@ -6,7 +6,7 @@ const PORT = 3001;
 const server = http.createServer((req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 
-	if (req.url.includes('onsearch')) {
+	if (req.url.includes('/rickandmorty/onsearch/')) {
 		const ID = req.url.split('/').at(-1);
 		getCharById(res, ID);
 	}

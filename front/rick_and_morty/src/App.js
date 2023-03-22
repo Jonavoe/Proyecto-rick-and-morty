@@ -27,7 +27,7 @@ function App() {
     // * Servidor Local
     // fetch(`http://localhost:3001/rickandmorty/character/${id}`)
     // * Funcion on serachServer
-    fetch(`http://localhost:3001/rickandmorty/onsearch/`)
+    fetch(`http://localhost:3001/rickandmorty/onsearch/${id}`)
         .then(response => response.json())
         .then(data => {
           if (data.id) {
@@ -53,7 +53,9 @@ function App() {
     // * API original de rickandmorty
     // fetch(`https://rickandmortyapi.com/api/character/${id}`)
     // * Servidor Local
-    fetch(`http://localhost:3001/rickandmorty/character/${id}`)
+    // fetch(`http://localhost:3001/rickandmorty/character/${id}`)
+    // * Funcion on serachServer
+    fetch(`http://localhost:3001/rickandmorty/onsearch/${id}`)
       .then(response => response.json())
       .then(data => {
         if (data.id) {
