@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 const Home = props => {
   return (
-    <div className={styles.container}>
-      <Link to='/characters'>
+    <Link to='/characters'>
+      <div className={styles.container}>
         <img
           src='https://coolthemestores.com/wp-content/uploads/2021/05/rick-and-morty-chrome-theme-wallpaper.jpg'
           alt='home'
         />
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

@@ -1,9 +1,14 @@
 import React from 'react';
+import styles from './Characters.module.css';
 import Cards from '../../components/Cards/Cards';
 
-const Characters = (props) => {
+const Characters = props => {
   return (
-    <Cards characters={props.characters} onClose={props.removeCharacters} />
+    <div className={styles.container}>
+      <div className={styles.cardsContainer}>
+        <Cards characters={props.characters} onClose={props.removeCharacters} />
+      </div>
+    </div>
   );
 };
 

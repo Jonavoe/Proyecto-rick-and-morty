@@ -2,19 +2,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 .container img {
-  animation: moveUp 1s ease-in-out;
+  animation: container 1s linear both;
   border-radius: 2rem;
 }
 
-@keyframes moveUp {
+@keyframes container {
   0% {
-    transform: translateY(100%);
+    transform: scale(1) rotateZ(0);
+  }
+  50% {
+    transform: scale(2) rotateZ(180deg);
   }
   100% {
-    transform: translateY(0) rotate(360deg);
+    transform: scale(1) rotateZ(360deg);
   }
 }
