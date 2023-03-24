@@ -9,8 +9,12 @@
   ],
   "routes": [
     {
+      "src": "/api/.*",
+      "dest": "front/rick_and_morty/build/index.js"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/front/rick_and_morty/build/index.html"
+      "dest": "front/rick_and_morty/build/index.html"
     }
   ]
 }
