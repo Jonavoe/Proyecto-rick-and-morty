@@ -15,6 +15,5 @@
       "src": "/(.*)",
       "dest": "front/rick_and_morty/build/index.html"
     }
-  ],
-  "root": "front/rick_and_morty/build"
+  ]
 }
