@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "front/rick_and_morty/package.json",
+      "use": "@vercel/node",
+      "script": "npm run build"
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "/front/rick_and_morty/build/$1" }]
+}
