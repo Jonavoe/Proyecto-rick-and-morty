@@ -4,8 +4,13 @@
     {
       "src": "front/rick_and_morty/package.json",
       "use": "@vercel/node",
-      "script": "npm run build"
+      "command": "npm run build"
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "/front/rick_and_morty/build/$1" }]
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/front/rick_and_morty/build/index.html"
+    }
+  ]
 }
