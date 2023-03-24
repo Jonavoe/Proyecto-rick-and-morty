@@ -3,8 +3,7 @@
   "builds": [
     {
       "src": "front/rick_and_morty/package.json",
-      "use": "@vercel/node",
-      "command": "npm run build"
+      "use": "@vercel/node"
     }
   ],
   "routes": [
