@@ -8,18 +8,29 @@ const getCharDetail = (req, res) => {
 	axios
 		.get(`${URL}${charId}`)
 		.then((response) => {
+			const {
+				id,
+				name,
+				species,
+				image,
+				gender,
+				status,
+				origin,
+				created,
+				location,
+			} = response.data;
 			const character = {
-				id: response.data.id,
-				name: response.data.name,
-				species: response.data.species,
-				image: response.data.image,
-				gender: response.data.gender,
-				status: response.data.status,
-				origin: response.data.origin,
-				created: response.data.created,
-				location: response.data.location,
+				id,
+				name,
+				species,
+				image,
+				gender,
+				status,
+				origin,
+				created,
+				location,
 			};
-			res.json(character);
+			res.status(200).json(character);
 		})
 		.catch((error) => {
 			console.error(error);

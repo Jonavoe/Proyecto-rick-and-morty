@@ -8,13 +8,8 @@ const getCharById = (req, res) => {
 	axios
 		.get(`${URL}${charId}`)
 		.then((response) => {
-			const character = {
-				id: response.data.id,
-				name: response.data.name,
-				species: response.data.species,
-				image: response.data.image,
-				gender: response.data.gender,
-			};
+			const { id, name, species, image, gender } = response.data;
+			const character = { id, name, species, image, gender };
 			res.json(character);
 		})
 		.catch((error) => {
