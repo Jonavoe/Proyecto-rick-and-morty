@@ -3,14 +3,13 @@ const server = express();
 const PORT = 3001;
 const cors = require('cors');
 const morgan = require('morgan');
-
+const router = require('./routes/index');
 
 server.use(cors());
 server.use(morgan('dev'));
 
-const router = require('./routes/index');
-
 server.use(express.json());
+
 server.use('/', router);
 
 server.listen(PORT, () => {

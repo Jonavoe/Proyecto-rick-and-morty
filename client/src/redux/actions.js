@@ -42,7 +42,8 @@ export const useFetchCharacters = () => {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`https://rickandmortyapi.com/api/character/${params.id}`)
+    // fetch(`https://rickandmortyapi.com/api/character/${params.id}`)
+    fetch(`http://localhost:3001/rickandmorty/fav/${params.id}`)
       .then(response => response.json())
       .then(data => dispatch(addCharacters(data)));
   }, [dispatch, params.id]);
