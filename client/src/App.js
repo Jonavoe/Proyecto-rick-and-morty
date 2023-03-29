@@ -10,39 +10,43 @@ import Detail from './views/Detail/Detail';
 import Characters from './views/Landing/Characters';
 import { useNavigate } from 'react-router-dom';
 
+const axios = require('axios');
+
 function App() {
   const [characters, setCharacters] = useState([]);
-  
+
   function removeCharacters(id) {
     setCharacters(characters => characters.filter(c => c.id !== id));
   }
-  const onSearch = id => {
+  const onSearch = async (id) => {
     // * Base de datos Henry
     // const URL_BASE = 'https://be-a-rym.up.railway.app/api';
     // const KEY = '1ffccaa0d688.4235080dc23aac8bb293';
-    // fetch(`${URL_BASE}/character/${id}?key=${KEY}`)
-    if (id)
+    //const response = await axios.get(`${URL_BASE}/character/${id}?key=${KEY}`);
     // * API original de rickandmorty
-    // fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    //const response = await axios.get(`https://rickandmortyapi.com/api/character/${id}`);
     // * Servidor Local
-    // fetch(`http://localhost:3001/rickandmorty/character/${id}`)
+    //const response = await axios.get(`http://localhost:3001/rickandmorty/character/${id}`);
     // * Funcion onSearchServer
-    fetch(`http://localhost:3001/onsearch/${id}`)
-        .then(response => response.json())
-        .then(data => {
-          if (data.id) {
-            const duplicado = characters.some(
-              character => character.id === data.id
-            );
-            if (duplicado) {
-              window.alert('Personaje repetido');
-            } else {
-              setCharacters(oldChars => [...oldChars, data]);
-            }
-          } else {
-            window.alert('No hay personajes con ese ID');
-          }
-        });
+    try {
+      const response = await axios.get(`http://localhost:3001/onsearch/${id}`);
+      const data = response.data;
+      if (data.id) {
+        const duplicado = characters.some(
+          character => character.id === data.id
+        );
+        if (duplicado) {
+          window.alert('Personaje repetido');
+        } else {
+          setCharacters(oldChars => [...oldChars, data]);
+        }
+      } else {
+        window.alert('No hay personajes con ese ID');
+      }
+    } catch (error) {
+      console.error(error);
+      window.alert('Ocurrió un error al realizar la búsqueda');
+    }
   };
 
   const randomSearch = id => {
@@ -80,8 +84,7 @@ function App() {
   let username = '';
   let password = '';
 
-  
-  const login = (userData) => {
+  const login = userData => {
     if (userData.username === username && userData.password === password) {
       setAccess(true);
       navigate('/home');
@@ -91,13 +94,12 @@ function App() {
   useEffect(() => {
     !access && navigate('/');
   }, [access, navigate]);
-  
-  
+
   const logOut = () => {
     setAccess(false);
     navigate('/');
   };
-  
+
   return (
     <div className={styles.App}>
       {location.pathname !== '/' && location.pathname !== '/home' && (
