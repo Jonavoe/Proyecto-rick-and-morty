@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Form.module.css';
 import validate from './validation.js';
+import Banner from '../../components/Banner/Banner';
 
 const Form = ({ login }) => {
   const [userData, setUserData] = useState({ username: '', password: '' });
@@ -21,72 +22,75 @@ const Form = ({ login }) => {
   };
 
   return (
-    <div className={styles.containerForm}>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.inputSpan}>
-          <label htmlFor='username' className={styles.label}>
-            Presione login, falta creacion de usuarios!
-          </label>
-          <label htmlFor='username' className={styles.label}>
-            Username
+    <div className={styles.container}>
+      <div className={styles.containerForm}>
+        <Banner />
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.inputSpan}>
+            <label htmlFor='username' className={styles.label}>
+              Presione login, falta creacion de usuarios!
+            </label>
+            <label htmlFor='username' className={styles.label}>
+              Username
+            </label>
+            <input
+              name='username'
+              className={styles.input}
+              type='text'
+              value={userData.username}
+              onChange={handleChange}
+            />
+            <span
+              className={
+                errors.username && userData.username
+                  ? styles.userInvalid
+                  : styles.userNone
+              }
+            >
+              {errors.username}
+            </span>
+            <span
+              className={
+                !errors.username && userData.username
+                  ? styles.userSuccess
+                  : styles.userNone
+              }
+            >
+              Username correcto
+            </span>
+          </div>
+
+          <label htmlFor='password' className={styles.label}>
+            password
           </label>
           <input
-            name='username'
+            name='password'
             className={styles.input}
             type='text'
-            value={userData.username}
+            value={userData.password}
             onChange={handleChange}
           />
           <span
             className={
-              errors.username && userData.username
+              errors.password && userData.password
                 ? styles.userInvalid
                 : styles.userNone
             }
           >
-            {errors.username}
+            {errors.password}
           </span>
           <span
             className={
-              !errors.username && userData.username
+              !errors.password && userData.password
                 ? styles.userSuccess
                 : styles.userNone
             }
           >
-            Username correcto
+            Password correcto
           </span>
-        </div>
-
-        <label htmlFor='password' className={styles.label}>
-          password
-        </label>
-        <input
-          name='password'
-          className={styles.input}
-          type='text'
-          value={userData.password}
-          onChange={handleChange}
-        />
-        <span
-          className={
-            errors.password && userData.password
-              ? styles.userInvalid
-              : styles.userNone
-          }
-        >
-          {errors.password}
-        </span>
-        <span
-          className={
-            !errors.password && userData.password
-              ? styles.userSuccess
-              : styles.userNone
-          }
-        >
-          Password correcto
-        </span>
-        <button className={styles.btn}>Login</button>
-      </form>
+          <button className={styles.btn}>Login</button>
+        </form>
+      </div>
     </div>
   );
 };
