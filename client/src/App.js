@@ -24,12 +24,12 @@ function App() {
     // const KEY = '1ffccaa0d688.4235080dc23aac8bb293';
     //const response = await axios.get(`${URL_BASE}/character/${id}?key=${KEY}`);
     // * API original de rickandmorty
-    //const response = await axios.get(`https://rickandmortyapi.com/api/character/${id}`);
+    const response = await axios.get(`https://rickandmortyapi.com/api/character/${id}`);
     // * Servidor Local
     //const response = await axios.get(`http://localhost:3001/rickandmorty/character/${id}`);
     // * Funcion onSearchServer
     try {
-      const response = await axios.get(`http://localhost:3001/onsearch/${id}`);
+      // const response = await axios.get(`http://localhost:3001/onsearch/${id}`);
       const data = response.data;
       if (data.id) {
         const duplicado = characters.some(
@@ -55,11 +55,11 @@ function App() {
     // const KEY = '1ffccaa0d688.4235080dc23aac8bb293';
     // fetch(`${URL_BASE}/character/${id}?key=${KEY}`)
     // * API original de rickandmorty
-    // fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
     // * Servidor Local
     // fetch(`http://localhost:3001/rickandmorty/character/${id}`)
     // * Funcion onSearchServer
-    fetch(`http://localhost:3001/onsearch/${id}`)
+    // fetch(`http://localhost:3001/onsearch/${id}`)
       .then(response => response.json())
       .then(data => {
         if (data.id) {

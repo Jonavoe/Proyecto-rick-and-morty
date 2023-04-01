@@ -1,8 +1,6 @@
-
 .banner {
-    width: 50%;
-    border-radius: 2rem;
-    opacity: 95%;
-  }
-
-  
+  padding: 1rem;
+  width: 50%;
+  border-radius: 2rem;
+  opacity: 95%;
+}
