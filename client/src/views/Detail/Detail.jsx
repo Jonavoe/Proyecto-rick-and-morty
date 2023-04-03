@@ -8,7 +8,7 @@ export default function Detail(props) {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3001/detail/${params.id}`)
+    fetch(`https://rickandmortyapi.com/api/character/${params.id}`)
       .then(response => response.json())
       .then(char => {
         if (char.name) {
