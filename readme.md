@@ -1,6 +1,3 @@
-Aquí tienes el `README.md` para el repositorio del proyecto "Rick and Morty":
-
-```markdown
 # Proyecto Rick and Morty
 
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -75,6 +72,3 @@ Si tienes alguna pregunta o sugerencia, puedes contactarme en:
 ---
 
 ¡Gracias por visitar el proyecto!
-```
-
-Si hay algo más que te gustaría agregar o ajustar, avísame. ¡Espero que te sirva!
